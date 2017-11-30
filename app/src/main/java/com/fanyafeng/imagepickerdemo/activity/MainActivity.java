@@ -22,6 +22,7 @@ import com.fanyafeng.imagepicker.photocompressionutil.MLBatchCompressPictureUtil
 import com.fanyafeng.imagepicker.photocompressionutil.OnBatchCompressListener;
 import com.fanyafeng.imagepicker.ui.MLImageListActivity;
 import com.fanyafeng.imagepicker.ui.MLTakePhotoActivity;
+import com.fanyafeng.imagepicker.view.CropImageView;
 import com.fanyafeng.imagepickerdemo.ImageLoadFrame.FrescoLoadFrame;
 import com.fanyafeng.imagepickerdemo.ImageLoadFrame.GlideLoadFrame;
 import com.fanyafeng.imagepickerdemo.ImageLoadFrame.PicassoLoadFrame;
@@ -91,6 +92,21 @@ public class MainActivity extends BaseActivity {
         mlImagePicker = MLImagePicker.getInstance()
                 .setImageLoadFrame(new FrescoLoadFrame());
         mainRequestCode = MLImagePicker.CODE_REQUEST_IMG_LIST;
+
+//        MLImagePicker.getInstance()
+//                .setImageLoadFrame(new FrescoLoadFrame())
+//                .setImageMaxSize(9)
+//                .setChooseType(MLImagePicker.TYPE_CHOOSE_MULTIPLE)
+//                .setNavigationIconRes(0)
+//                .setOutputY(800)
+//                .setOutputX(800)
+//                .setFocusHeight(800)
+//                .setFocusWeight(800)
+//                .setLight(false)
+//                .setToolbarColor(Color.BLACK)
+//                .setStatusBarColor(Color.BLACK)
+//                .setFocusStyle(CropImageView.Style.CIRCLE)
+//                .setSaveRectangle(true);
 
         initView();
         initData();
