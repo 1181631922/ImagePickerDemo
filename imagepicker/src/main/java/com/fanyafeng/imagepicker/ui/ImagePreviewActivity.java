@@ -56,6 +56,8 @@ public class ImagePreviewActivity extends ImageBaseActivity {
 
     private ArrayList<ImageBean> imageList = new ArrayList<>();
 
+    private boolean isOnlyPreview;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,9 @@ public class ImagePreviewActivity extends ImageBaseActivity {
         setContentView(R.layout.activity_image_preview);
         imageList = getIntent().getParcelableArrayListExtra(MLImagePicker.RESULT_IMG_LIST);
         currPosition = getIntent().getIntExtra("position", 0);
+
+        isOnlyPreview = getIntent().getBooleanExtra(MLImagePicker.PERVIEW_ONLY, false);
+
 
         screenHeight = getScreenHeight(this);
         screenWidth = getScreenWidth(this);
@@ -143,6 +148,12 @@ public class ImagePreviewActivity extends ImageBaseActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rvPreviewList.setLayoutManager(linearLayoutManager);
+
+        if (isOnlyPreview) {
+            toolbarRightTitle.setVisibility(View.GONE);
+            findViewById(R.id.layoutBottom).setVisibility(View.GONE);
+            vpPreview.setPadding(0, 0, 0, 0);
+        }
     }
 
     private void initData() {

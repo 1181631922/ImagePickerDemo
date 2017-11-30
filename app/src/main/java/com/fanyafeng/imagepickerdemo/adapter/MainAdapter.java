@@ -1,7 +1,10 @@
 package com.fanyafeng.imagepickerdemo.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.widget.ImageView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.fanyafeng.imagepicker.MLImagePicker;
 import com.fanyafeng.imagepicker.bean.ImageBean;
+import com.fanyafeng.imagepicker.ui.ImagePreviewActivity;
 import com.fanyafeng.imagepickerdemo.R;
 
 import java.util.ArrayList;
@@ -50,7 +54,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
     }
 
     @Override
-    public void onBindViewHolder(MainViewHolder holder, int position) {
+    public void onBindViewHolder(MainViewHolder holder, final int position) {
         ImageBean imageBean = imageBeanList.get(position);
         if (MLImagePicker.getInstance().getImageLoadFrame().isFresco()) {
             holder.sdvMain.setVisibility(View.VISIBLE);
@@ -59,6 +63,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
             holder.ivMain.setVisibility(View.VISIBLE);
             MLImagePicker.getInstance().getImageLoadFrame().displayImage(context, imageBean.imgPath, holder.ivMain, DP_200, DP_200);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ImagePreviewActivity.class);
+                intent.putParcelableArrayListExtra(MLImagePicker.RESULT_IMG_LIST, (ArrayList<? extends Parcelable>) imageBeanList);
+                intent.putExtra("position", position);
+                intent.putExtra(MLImagePicker.PERVIEW_ONLY, true);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -53,9 +53,10 @@
             android:id="@+id/vpPreview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="45dp" />
+            android:paddingBottom="45dp" />
 
         <RelativeLayout
+            android:id="@+id/layoutBottom"
             android:layout_width="match_parent"
             android:layout_height="115dp"
             android:layout_alignParentBottom="true"

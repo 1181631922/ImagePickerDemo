@@ -52,6 +52,8 @@ public class MLImagePicker {
 
     public final static String LOCATION_URL = "location_url";
 
+    public final static String PERVIEW_ONLY = "is_only_preview";
+
     //图片列表请求
     public final static int CODE_REQUEST_IMG_LIST = 2000;
     //图片列表返回结果
