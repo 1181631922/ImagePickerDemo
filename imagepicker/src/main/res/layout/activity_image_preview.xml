@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.meili.component.imagepicker.ui.ImagePreviewActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <!--字号可以自定义，这里默认16dp-->
+            <TextView
+                android:id="@+id/toolbarCenterTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/activity_horizontal_margin" />
+
+            <TextView
+                android:id="@+id/toolbarRightTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/send"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/activity_horizontal_margin" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        tools:context="com.meili.imagepicker.ui.ImageListActivity">
+
+        <com.fanyafeng.imagepicker.view.photoview.HackyViewPager
+            android:id="@+id/vpPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="45dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvPreviewList"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#8C000000" />
+
+            <RelativeLayout
+                android:id="@+id/layoutPreviewBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/rvPreviewList"
+                android:background="?attr/colorPrimary">
+
+                <LinearLayout
+                    android:id="@+id/layoutImagePreview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_alignParentRight="true"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cbPreview"
+                        android:layout_width="30dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="15dp"
+                        android:clickable="false"
+                        android:theme="@style/AppTheme.AppBarOverlay" />
+
+                    <TextView
+                        android:id="@+id/tvImagePreview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center"
+                        android:text="选择"
+                        android:textColor="@android:color/white"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

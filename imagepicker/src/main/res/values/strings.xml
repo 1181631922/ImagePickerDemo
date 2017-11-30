@@ -1,0 +1,16 @@
+<resources>
+    <string name="img_picker_name">图片</string>
+
+    <string name="picture_no_choose">图片未选择</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="send">发送</string>
+    <string name="choose">选择</string>
+    <string name="preview">预览</string>
+    <string name="picture_max_limit">图片最多选择</string>
+    <string name="picture_unit">张</string>
+    <string name="folder">文件夹：</string>
+    <string name="picture_count">图片(张)：</string>
+    <string name="deal_picture">裁剪图片</string>
+    <string name="deal_picture_finish">完成</string>
+</resources>

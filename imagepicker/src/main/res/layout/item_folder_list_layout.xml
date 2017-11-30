@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="95dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdFolderList"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_marginLeft="15dp" />
+
+    <ImageView
+        android:id="@+id/ivFolderList"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_marginLeft="15dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="105dp"
+        android:layout_marginRight="55dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvFolderList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片和视频"
+            android:textColor="@android:color/black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/sizeFolderList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="77张"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+
+    <RadioButton
+        android:id="@+id/rbFolderList"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:clickable="false" />
+
+</RelativeLayout>
