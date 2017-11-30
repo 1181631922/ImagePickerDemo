@@ -5,9 +5,9 @@
 <img src="picture/ImagePicker.gif" width="280" height="475" />
 
 ### 2.设计思路
-<img src="picture/des_1.jpg" width="410" height="230" />
+<img src="picture/des_1.jpg" width="820" height="460" />
 
-<img src="picture/des_2.jpg" width="410" height="230" />
+<img src="picture/des_2.jpg" width="820" height="460" />
 
 ### 3.图片选择使用
 ```
