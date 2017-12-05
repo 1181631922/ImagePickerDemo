@@ -70,6 +70,7 @@ public class CompressPictureUtil {
         int thumbW = width;
         int thumbH = height;
 
+        //因为屏幕截图只判断宽度不判断高度
         if (width > 4000) {
             thumbW = (int) (width * 0.4);
             thumbH = (int) (height * 0.4);
@@ -141,6 +142,11 @@ public class CompressPictureUtil {
         options.inSampleSize = inSampleSize;
         options.inJustDecodeBounds = false;
 
+        /**
+         * 向上取整
+         *
+         * inSampleSize必须为整数
+         */
         int heightRatio = (int) Math.ceil(options.outHeight / (float) height);
         int widthRatio = (int) Math.ceil(options.outWidth / (float) width);
 

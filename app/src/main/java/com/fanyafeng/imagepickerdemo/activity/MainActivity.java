@@ -282,6 +282,7 @@ public class MainActivity extends BaseActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     intent = new Intent(MainActivity.this, MLImageListActivity.class);
+                    mlImagePicker.setFocusStyle(CropImageView.Style.RECTANGLE);
                 }
             }
         });
@@ -291,6 +292,7 @@ public class MainActivity extends BaseActivity {
                 if (isChecked) {
                     intent = new Intent(MainActivity.this, MLTakePhotoActivity.class);
                     mainRequestCode = MLImagePicker.CODE_REQUEST_TAKE_PHOTO;
+                    mlImagePicker.setFocusStyle(CropImageView.Style.CIRCLE);
                 }
             }
         });

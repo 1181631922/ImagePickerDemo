@@ -159,6 +159,7 @@ public class MLTakePhotoActivity extends ImageBaseActivity implements CropImageV
 
     @Override
     public void onBitmapSaveSuccess(File file) {
+        MLImagePicker.addPic(this, file);
         ImageBean imageBean = new ImageBean();
         imageBean.imgPath = file.getAbsolutePath();
         Intent intent = new Intent();

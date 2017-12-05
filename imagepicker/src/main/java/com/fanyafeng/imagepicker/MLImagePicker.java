@@ -279,6 +279,16 @@ public class MLImagePicker {
         return this;
     }
 
+    /**
+     * 扫描图片
+     */
+    public static void addPic(Context context, File file) {
+        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        Uri contentUri = Uri.fromFile(file);
+        mediaScanIntent.setData(contentUri);
+        context.sendBroadcast(mediaScanIntent);
+    }
+
 
     public File getCompressImgFolder() {
         if (compressImgFolder == null) {

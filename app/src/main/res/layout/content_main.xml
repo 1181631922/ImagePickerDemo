@@ -191,14 +191,14 @@
                 android:id="@+id/rbPicture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="相册"
+                android:text="相册(裁剪框为方形)"
                 android:textColor="@android:color/black" />
 
             <RadioButton
                 android:id="@+id/rbTakePhoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="拍照"
+                android:text="拍照(裁剪框为圆形)"
                 android:textColor="@android:color/black" />
         </RadioGroup>
 

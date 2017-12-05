@@ -302,6 +302,8 @@ public class MLImageListActivity extends ImageBaseActivity implements ScanImageS
     @Override
     public void onImageLoaded(List<ImageFolderBean> imageFolderBeanList) {
         this.imageFolderBeanList = imageFolderBeanList;
+        rvFolderList.setLayoutManager(new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false));
+        rvFolderList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         imageFolderBeanList.get(0).isChecked = true;
         folderListAdapter.refreshData(imageFolderBeanList);
 
@@ -310,6 +312,7 @@ public class MLImageListActivity extends ImageBaseActivity implements ScanImageS
         } else {
             Log.d(TAG, "imageFolderBeanListSize:" + imageFolderBeanList.size());
             Log.d(TAG, "imageFolderBeanList:" + imageFolderBeanList.get(0).toString());
+            rvImageList.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
             imageListAdapter.refreshData(imageFolderBeanList.get(0).imageBeanList);
         }
     }
